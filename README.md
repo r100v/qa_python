@@ -1,7 +1,7 @@
 # qa_python
 Test class BooksCollector
 test_add_new_book_add_two_books Проверка добавления книг.
-test_add_new_book_twice ельзя добавить одну и ту же книгу дважды.
+test_add_new_book_twice Нельзя добавить одну и ту же книгу дважды.
 test_add_rating_to_a_book_that_is_not_in_the_list Нельзя выставить рейтинг книге, которой нет в списке.
 test_cannot_set_rating_less_than_one Нельзя выставить рейтинг меньше 1.
 test_cannot_set_rating_less_than_ten Нельзя выставить рейтинг больше 10.
