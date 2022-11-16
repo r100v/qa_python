@@ -39,6 +39,11 @@ class TestBooksCollector:
         assert collector.books_rating == {'Властелин колец': 1}
     def test_to_check_the_book_that_has_not_been_added_there_is_no_rating(self): #У не добавленной книги нет рейтинга
         collector = BooksCollector()
-        collector.add_new_book('Тайна Коко')
         rating = collector.get_book_rating('Назад в будущее')
         assert rating is None
+    def test_add_to_favorite(self): #Добавление книги в избранное.
+        collector = BooksCollector()
+        collector.add_new_book('Интерстеллар')
+        collector.add_book_in_favorites('Интерстеллар')
+        assert collector.favorites == ['Интерстеллар']
+
