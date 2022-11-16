@@ -51,4 +51,9 @@ class TestBooksCollector:
         collector = BooksCollector()
         collector.add_book_in_favorites('Криминальное чтиво')
         assert collector.books_rating == {}
-
+    def test_delete_from_favorites(self):#Проверка удаления книги из избранного.
+        collector = BooksCollector()
+        collector.add_new_book('1+1')
+        collector.add_book_in_favorites('1+1')
+        collector.delete_book_from_favorites('1+1')
+        assert collector.books_rating == {'1+1': 1}
