@@ -46,4 +46,9 @@ class TestBooksCollector:
         collector.add_new_book('Интерстеллар')
         collector.add_book_in_favorites('Интерстеллар')
         assert collector.favorites == ['Интерстеллар']
+    def test_you_cannot_add_a_book_to_favorites_if_it_is_not_in_the_books_rating_dictionary(self):
+        #Нельзя добавить книгу в избранное, если её нет в словаре books_rating
+        collector = BooksCollector()
+        collector.add_book_in_favorites('Криминальное чтиво')
+        assert collector.books_rating == {}
 
