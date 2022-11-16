@@ -39,21 +39,6 @@ class TestBooksCollector:
         assert collector.books_rating == {'Властелин колец': 1}
     def test_to_check_the_book_that_has_not_been_added_there_is_no_rating(self): #У не добавленной книги нет рейтинга
         collector = BooksCollector()
+        collector.add_new_book('Тайна Коко')
         rating = collector.get_book_rating('Назад в будущее')
         assert rating is None
-    def test_add_to_favorite(self): #Добавление книги в избранное.
-        collector = BooksCollector()
-        collector.add_new_book('Интерстеллар')
-        collector.add_book_in_favorites('Интерстеллар')
-        assert collector.favorites == ['Интерстеллар']
-    def test_you_cannot_add_a_book_to_favorites_if_it_is_not_in_the_books_rating_dictionary(self):
-        #Нельзя добавить книгу в избранное, если её нет в словаре books_rating
-        collector = BooksCollector()
-        collector.add_book_in_favorites('Криминальное чтиво')
-        assert collector.books_rating == {}
-    def test_delete_from_favorites(self):#Проверка удаления книги из избранного.
-        collector = BooksCollector()
-        collector.add_new_book('1+1')
-        collector.add_book_in_favorites('1+1')
-        collector.delete_book_from_favorites('1+1')
-        assert collector.books_rating == {'1+1': 1}
