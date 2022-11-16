@@ -58,3 +58,4 @@ class TestBooksCollector:
         collector.delete_book_from_favorites('1+1')
         assert collector.books_rating == {'1+1': 1}
 #README
+#README
